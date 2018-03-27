@@ -195,7 +195,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityAboveNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -256,7 +256,7 @@ static void create_user_tasks()
   debug_task_hdl = osThreadCreate(osThread(debug_task), NULL); 
   APP_ASSERT(debug_task_hdl); 
   /*创建锁任务*/
-  osThreadDef(lock_task, lock_task, osPriorityNormal, 0, 128);
+  osThreadDef(lock_task, lock_task, osPriorityNormal, 0, 256);
   lock_task_hdl = osThreadCreate(osThread(lock_task), NULL); 
   APP_ASSERT(lock_task_hdl);
   /*创建门任务*/

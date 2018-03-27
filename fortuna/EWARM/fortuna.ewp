@@ -659,7 +659,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>fortuna.bin</state>
+                    <state>ahg082.bin</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -714,7 +714,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>fortuna.out</state>
+                    <state>ahg082.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>

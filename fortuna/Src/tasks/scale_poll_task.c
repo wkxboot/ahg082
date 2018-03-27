@@ -47,7 +47,7 @@ void scale_poll_task(void const * argument)
  */
  while(1)
  {
-  ret= scale_obtain_net_weight(1,0);
+  ret= scale_obtain_net_weight(0,0);
    /*全部执行成功*/
   if(ret==APP_TRUE)
   {

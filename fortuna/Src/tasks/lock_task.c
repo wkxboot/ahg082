@@ -43,7 +43,7 @@ static void lock_task_unlock_lock();
 static void lock_task_debug_lock_lock();
 static void lock_task_debug_unlock_lock();
 
-static uint8_t lock_status=LOCK_FAULT;
+//static uint8_t lock_status=LOCK_FAULT;
 
 
 static void lock_timer_init()
@@ -79,7 +79,7 @@ static void lock_timer_expired(void const * argument)
   APP_LOG_DEBUG("向主机通信任务发送关锁失败信号.\r\n");
   osSignalSet(host_comm_task_hdl,COMM_TASK_LOCK_LOCK_FAIL_SIGNAL); 
   
-  lock_task_unlock_lock();
+  //lock_task_unlock_lock();
  }
 }
 
