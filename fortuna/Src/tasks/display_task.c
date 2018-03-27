@@ -2,6 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
+#include "ABDK_AHG082_ZK.h"
 #include "digit_led.h"
 #include "display_task.h"
 #define APP_LOG_MODULE_NAME   "[display]"

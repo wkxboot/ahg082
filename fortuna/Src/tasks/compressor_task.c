@@ -2,7 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
-#include "ABDK_AHG081_ZK.h"
+#include "ABDK_AHG082_ZK.h"
 #include "temperature_task.h"
 #include "compressor_task.h"
 #define APP_LOG_MODULE_NAME   "[compressor]"

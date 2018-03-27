@@ -3,7 +3,7 @@
 #include "cmsis_os.h"
 #include "app_common.h"
 #include "gpio.h"
-#include "ABDK_AHG081_ZK.h"
+#include "ABDK_AHG082_ZK.h"
 #include "digit_led.h"
 
 

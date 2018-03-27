@@ -2,6 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
+#include "ABDK_AHG082_ZK.h"
 #include "scales.h"
 #include "scale_func_task.h"
 #include "digit_led.h"
@@ -10,7 +11,6 @@
 #include "weight_cache_task.h"
 #include "temperature_cache_task.h"
 #include "calibrate_cache_task.h"
-#include "ABDK_AHG081_ZK.h"
 #define APP_LOG_MODULE_NAME   "[switch]"
 #define APP_LOG_MODULE_LEVEL   APP_LOG_LEVEL_INFO    
 #include "app_log.h"

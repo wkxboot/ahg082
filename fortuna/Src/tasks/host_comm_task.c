@@ -2,6 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
+#include "ABDK_AHG082_ZK.h"
 #include "comm_protocol.h"
 #include "comm_port_serial.h"
 #include "comm_port_timer.h"
@@ -9,7 +10,7 @@
 #include "scale_comm_task.h"
 #include "scale_func_task.h"
 #include "scale_poll_task.h"
-#include "lock_task.h"
+#include "lock_ctrl_task.h"
 #define APP_LOG_MODULE_NAME   "[host_comm]"
 #define APP_LOG_MODULE_LEVEL   APP_LOG_LEVEL_INFO    
 #include "app_log.h"

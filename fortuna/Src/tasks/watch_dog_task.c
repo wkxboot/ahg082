@@ -2,6 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
+#include "ABDK_AHG082_ZK.h"
 #include "iwdg.h"
 #include "watch_dog_task.h"
 #define APP_LOG_MODULE_NAME   "[watch_dog]"

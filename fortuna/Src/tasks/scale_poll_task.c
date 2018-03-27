@@ -2,6 +2,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "app_common.h"
+#include "ABDK_AHG082_ZK.h"
 #include "host_comm_task.h"
 #include "scale_comm_task.h"
 #include "scale_func_task.h"
@@ -47,7 +48,7 @@ void scale_poll_task(void const * argument)
  */
  while(1)
  {
-  ret= scale_obtain_net_weight(0,0);
+  ret= scale_obtain_net_weight(1,0);
    /*全部执行成功*/
   if(ret==APP_TRUE)
   {
