@@ -4,6 +4,9 @@
 #include "app_common.h"
 #include "ABDK_AHG082_ZK.h"
 #include "lock_ctrl_task.h"
+#include "lock_switch_task.h"
+#include "fan_ctrl_task.h"
+#include "glass_pwr_task.h"
 #include "door_status_task.h"
 #define APP_LOG_MODULE_NAME   "[door]"
 #define APP_LOG_MODULE_LEVEL   APP_LOG_LEVEL_DEBUG    
@@ -37,8 +40,11 @@ void door_task(void const * argument)
     if(door_status!=DOOR_TASK_DOOR_STATUS_OPEN)
     {
       door_status=DOOR_TASK_DOOR_STATUS_OPEN;
-      /*向锁任务发送门开启信号*/
+      /*向锁/风扇/加热玻璃/锁按键任务发送门开启信号*/
       osSignalSet(lock_ctrl_task_hdl,LOCK_CTRL_TASK_DOOR_STATUS_OPEN_SIGNAL);
+      osSignalSet(fan_ctrl_task_hdl,FAN_CTRL_TASK_DOOR_STATUS_OPEN_SIGNAL);
+      osSignalSet(glass_pwr_task_hdl,GLASS_PWR_TASK_DOOR_STATUS_OPEN_SIGNAL);
+      osSignalSet(lock_switch_task_hdl,LOCK_SWITCH_TASK_DOOR_STATUS_OPEN_SIGNAL);
     }
   }
   if(door_dwn_status==DOOR_STATUS_CLOSE)
@@ -47,8 +53,10 @@ void door_task(void const * argument)
     if(door_status!=DOOR_TASK_DOOR_STATUS_CLOSE)
     {
       door_status=DOOR_TASK_DOOR_STATUS_CLOSE;
-      /*向锁任务发送门关闭信号*/
+     /*向锁/风扇/加热玻璃发送门开启信号*/
       osSignalSet(lock_ctrl_task_hdl,LOCK_CTRL_TASK_DOOR_STATUS_CLOSE_SIGNAL);
+      osSignalSet(fan_ctrl_task_hdl,FAN_CTRL_TASK_DOOR_STATUS_CLOSE_SIGNAL);
+      osSignalSet(glass_pwr_task_hdl,GLASS_PWR_TASK_DOOR_STATUS_CLOSE_SIGNAL);
     } 
   } 
  }  

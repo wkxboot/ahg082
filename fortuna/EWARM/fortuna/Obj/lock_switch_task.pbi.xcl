@@ -1,4 +1,4 @@
-"D:\development\st\stm32\src_code\ahg082\fortuna\libraries\SEGGER_RTT_V612j\Syscalls\SEGGER_RTT_Syscalls_KEIL.c"
+"D:\development\st\stm32\src_code\ahg082\fortuna\Src\tasks\lock_switch_task.c"
 -std=c11
 -ferror-limit=0
 -I
