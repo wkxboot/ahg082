@@ -31,8 +31,9 @@ bsp_status_t status1,status2;
 static uint8_t pwr_off_cnt=0;
 static uint8_t pwr_on_cnt=0;
 
-status1=bsp_get_ups1_status();
-status2=bsp_get_ups2_status();
+//status1=bsp_get_ups1_status();
+//status2=bsp_get_ups2_status();
+status1=status2=UPS_PWR_STATUS_ON;
 
 /*如果UPS连接了主电源*/
 if(status1==UPS_PWR_STATUS_ON && status2==UPS_PWR_STATUS_ON)

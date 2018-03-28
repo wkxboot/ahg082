@@ -44,7 +44,7 @@ void lock_status_task(void const * argument)
     if(lock_status!=LOCK_STATUS_TASK_LOCK_STATUS_LOCK)
     {
       lock_status=LOCK_STATUS_TASK_LOCK_STATUS_LOCK;
-      /*向锁任务发送门关闭信号*/
+      /*向锁任务发送锁关闭信号*/
       osSignalSet(lock_ctrl_task_hdl,LOCK_CTRL_TASK_LOCK_STATUS_LOCK_SIGNAL);
     } 
   } 

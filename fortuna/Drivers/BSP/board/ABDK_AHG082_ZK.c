@@ -9,7 +9,7 @@
 
 
 #define  DOOR_CTL_POS_GPIO_Port       GPIOC
-#define  DOOR_CTL_POS_Pin             GPIO_PIN_5
+#define  DOOR_CTL_POS_Pin             GPIO_PIN_4
 
 
 /*获取锁舌传感器状态*/
@@ -165,18 +165,11 @@ void BSP_GLASS_PWR_TURN_ON_OFF(bsp_status_t status)
  bsp_glass_pwr_status=status;
 }
 
-/*灯带控制--PWM控制*/
+/*灯带控制--IO控制*/
 void BSP_LIGHT_TURN_ON_OFF(bsp_status_t status)
 {
+ HAL_GPIO_WritePin(LIGHT_CTL_POS_GPIO_Port,LIGHT_CTL_POS_Pin,(GPIO_PinState)status);
  bsp_light_status=status;
- if(status==LIGHT_CTL_ON)
- {
-  HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);  
- }
- else
- {
- HAL_TIM_PWM_Stop(&htim4,TIM_CHANNEL_3); 
- }
 }
 /*直流风扇控制--IO控制*/
 void BSP_FAN_TURN_ON_OFF(bsp_status_t status)
