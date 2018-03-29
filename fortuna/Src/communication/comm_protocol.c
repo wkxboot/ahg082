@@ -426,7 +426,7 @@ static comm_status_t comm_cmd11_process(uint8_t *ptr_param,uint8_t param_len,uin
    return COMM_ERR;
  }
  status=door_task_get_door_status();
- if(status==DOOR_TASK_DOOR_STATUS_OPEN)
+ if(status==DOOR_STATUS_TASK_DOOR_STATUS_OPEN)
  {
  /*回填门的状态*/
  ptr_param[0]=DOOR_OPENED;

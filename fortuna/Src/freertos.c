@@ -197,7 +197,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityAboveNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -265,14 +265,14 @@ static void create_user_tasks()
   osThreadDef(lock_status_task, lock_status_task, osPriorityNormal, 0, 128);
   lock_status_task_hdl = osThreadCreate(osThread(lock_status_task), NULL); 
   APP_ASSERT(lock_status_task_hdl);
-  /*创建锁按键任务*/
+  /*创建锁按键任务*/ 
   osThreadDef(lock_switch_task, lock_switch_task, osPriorityNormal, 0, 128);
   lock_switch_task_hdl = osThreadCreate(osThread(lock_switch_task), NULL); 
-  APP_ASSERT(lock_switch_task_hdl);
-  /*创建门任务*/
-  osThreadDef(door_task,door_task, osPriorityNormal, 0, 128);
-  door_task_hdl = osThreadCreate(osThread(door_task), NULL); 
-  APP_ASSERT(door_task_hdl);
+  APP_ASSERT(lock_switch_task_hdl);  
+  /*创建门任务*/  
+  osThreadDef(door_status_task,door_status_task, osPriorityNormal, 0, 128);
+  door_status_task_hdl = osThreadCreate(osThread(door_status_task), NULL); 
+  APP_ASSERT(door_status_task_hdl);
   /*创建数码管显示任务*/
   osThreadDef(display_task, display_task, osPriorityNormal, 0, 128);
   display_task_hdl = osThreadCreate(osThread(display_task), NULL); 

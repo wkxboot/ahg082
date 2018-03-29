@@ -562,7 +562,7 @@ err_handle2:
  /*获取门状态*/
  uint8_t status;
  status=door_task_get_door_status();
- if(status==DOOR_TASK_DOOR_STATUS_CLOSE)
+ if(status==DOOR_STATUS_TASK_DOOR_STATUS_CLOSE)
  {
   APP_LOG_DEBUG("门状态--关闭.\r\n");
  }
