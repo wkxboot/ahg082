@@ -1,6 +1,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "cmsis_os.h"
+#include "app_common.h"
 #include "ABDK_AHG082_ZK.h"
 #define APP_LOG_MODULE_NAME   "[BSP]"
 #define APP_LOG_MODULE_LEVEL   APP_LOG_LEVEL_ERROR    

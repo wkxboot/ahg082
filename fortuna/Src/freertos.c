@@ -197,7 +197,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityAboveNormal, 0, 256);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -250,7 +250,7 @@ static void create_user_tasks()
   scale_comm_task_hdl = osThreadCreate(osThread(scale_comm_task), NULL); 
   APP_ASSERT(scale_comm_task_hdl);
   /*创建看门狗任务*/
-  osThreadDef(watch_dog_task, watch_dog_task, osPriorityNormal, 0, 128);
+  osThreadDef(watch_dog_task, watch_dog_task, osPriorityNormal, 0, 256);
   watch_dog_task_hdl = osThreadCreate(osThread(watch_dog_task), NULL); 
   APP_ASSERT(watch_dog_task_hdl); 
   /*创建调试任务*/
@@ -262,19 +262,19 @@ static void create_user_tasks()
   lock_ctrl_task_hdl = osThreadCreate(osThread(lock_ctrl_task), NULL); 
   APP_ASSERT(lock_ctrl_task_hdl);
   /*创建锁状态任务*/
-  osThreadDef(lock_status_task, lock_status_task, osPriorityNormal, 0, 128);
+  osThreadDef(lock_status_task, lock_status_task, osPriorityNormal, 0, 256);
   lock_status_task_hdl = osThreadCreate(osThread(lock_status_task), NULL); 
   APP_ASSERT(lock_status_task_hdl);
   /*创建锁按键任务*/ 
-  osThreadDef(lock_switch_task, lock_switch_task, osPriorityNormal, 0, 128);
+  osThreadDef(lock_switch_task, lock_switch_task, osPriorityNormal, 0, 256);
   lock_switch_task_hdl = osThreadCreate(osThread(lock_switch_task), NULL); 
   APP_ASSERT(lock_switch_task_hdl);  
   /*创建门任务*/  
-  osThreadDef(door_status_task,door_status_task, osPriorityNormal, 0, 128);
+  osThreadDef(door_status_task,door_status_task, osPriorityNormal, 0, 256);
   door_status_task_hdl = osThreadCreate(osThread(door_status_task), NULL); 
   APP_ASSERT(door_status_task_hdl);
   /*创建数码管显示任务*/
-  osThreadDef(display_task, display_task, osPriorityNormal, 0, 128);
+  osThreadDef(display_task, display_task, osPriorityNormal, 0, 256);
   display_task_hdl = osThreadCreate(osThread(display_task), NULL); 
   APP_ASSERT(display_task_hdl);
   /*创建按键任务*/
@@ -286,31 +286,31 @@ static void create_user_tasks()
   compressor_task_hdl = osThreadCreate(osThread(compressor_task), NULL); 
   APP_ASSERT(compressor_task_hdl);
   /*创建系统LED任务*/
-  osThreadDef(sys_led_task, sys_led_task, osPriorityNormal, 0, 128);
+  osThreadDef(sys_led_task, sys_led_task, osPriorityNormal, 0, 256);
   sys_led_task_hdl = osThreadCreate(osThread(sys_led_task), NULL); 
   APP_ASSERT(sys_led_task_hdl);
   /*创建灯带任务*/
-  osThreadDef(light_ctrl_task, light_ctrl_task, osPriorityNormal, 0, 128);
+  osThreadDef(light_ctrl_task, light_ctrl_task, osPriorityNormal, 0, 256);
   light_ctrl_task_hdl = osThreadCreate(osThread(light_ctrl_task), NULL); 
   APP_ASSERT(light_ctrl_task_hdl);
   /*创建风扇任务*/
-  osThreadDef(fan_ctrl_task, fan_ctrl_task, osPriorityNormal, 0, 128);
+  osThreadDef(fan_ctrl_task, fan_ctrl_task, osPriorityNormal, 0, 256);
   fan_ctrl_task_hdl = osThreadCreate(osThread(fan_ctrl_task), NULL); 
   APP_ASSERT(fan_ctrl_task_hdl);
   /*创建DC任务*/
-  osThreadDef(dc_ctrl_task, dc_ctrl_task, osPriorityNormal, 0, 128);
+  osThreadDef(dc_ctrl_task, dc_ctrl_task, osPriorityNormal, 0, 256);
   dc_ctrl_task_hdl = osThreadCreate(osThread(dc_ctrl_task), NULL); 
   APP_ASSERT(dc_ctrl_task_hdl);
   /*创建玻璃电源任务*/
-  osThreadDef(glass_pwr_task, glass_pwr_task, osPriorityNormal, 0, 128);
+  osThreadDef(glass_pwr_task, glass_pwr_task, osPriorityNormal, 0, 256);
   glass_pwr_task_hdl = osThreadCreate(osThread(glass_pwr_task), NULL); 
   APP_ASSERT(glass_pwr_task_hdl);
   /*创建温度任务*/
-  osThreadDef(temperature_task, temperature_task, osPriorityNormal, 0, 128);
+  osThreadDef(temperature_task, temperature_task, osPriorityNormal, 0, 256);
   temperature_task_hdl = osThreadCreate(osThread(temperature_task), NULL); 
   APP_ASSERT(temperature_task_hdl);
   /*创建UPS任务*/
-  osThreadDef(ups_status_task, ups_status_task, osPriorityNormal, 0, 128);
+  osThreadDef(ups_status_task, ups_status_task, osPriorityNormal, 0, 256);
   ups_status_task_hdl = osThreadCreate(osThread(ups_status_task), NULL); 
   APP_ASSERT(ups_status_task_hdl);
   /*创建重量缓存任务*/
